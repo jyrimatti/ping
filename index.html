@@ -60,7 +60,7 @@ a.first {
       }
     },
     yaxis: {
-      min: 0,
+      min: -1,
       max: 400,
       show: false
     },
@@ -94,7 +94,7 @@ a.first {
   };
 
 var g = function(data, index) {
-  var ret = data.map(function(x) { return [x[0],x[index]]; });
+  var ret = data.map(function(x) { return [x[0], (x[index] || -1) ]; });
   return ret;
 };
 
