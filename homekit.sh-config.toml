@@ -1,0 +1,23 @@
+[[services]]
+type = "AccessoryInformation"
+
+[services.characteristics]
+Identify = {} # leave property completely out 'cos otherwise Homekit won't accept
+Manufacturer = "Jyri-Matti Lähteenmäki"
+Model = "Ping"
+Name = "Ping"
+SerialNumber = "AA:AA:AA:AA:AA:12"
+FirmwareRevision = "100.1.1"
+
+
+[[services]]
+type = "TemperatureSensor"
+
+[services.characteristics]
+Name = "Ping"
+ConfiguredName = "Ping"
+[services.characteristics.CurrentTemperature]
+minValue = -99
+maxValue = 99
+minStep = 0.001
+cmd = "cd ping; ./cmd/ping.sh 1 1"
