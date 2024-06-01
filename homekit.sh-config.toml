@@ -1,3 +1,7 @@
+bridge = "ping"
+port = 12312
+username = "AA:AA:AA:AA:AA:12"
+
 [[services]]
 type = "AccessoryInformation"
 
