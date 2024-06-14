@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell --pure -i dash -I channel:nixos-23.11-small -p nix gnused dash bc coreutils inetutils gnugrep
+#! nix-shell --pure --keep CREDENTIALS_DIRECTORY -i dash -I channel:nixos-23.11-small -p nix gnused dash bc coreutils inetutils gnugrep
 set -eu
 
 stamp="$(date +%s)"
