@@ -42,9 +42,6 @@ EOF
 echo "Reloading systemd config..."
 systemctl --user daemon-reload
 
-echo "Enabling $servicename.service..."
-systemctl --user enable $servicename
-
 echo "Enabling user process lingering for $USER..."
 loginctl enable-linger "$USER"
 
