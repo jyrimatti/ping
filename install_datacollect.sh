@@ -1,10 +1,10 @@
 #!/bin/sh
 
-service=ping
+scriptdir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
+service="$(basename "$scriptdir")"
 servicename=datacollect-$service
 servicedir=$HOME/.config/systemd/user
-
-scriptdir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 
 if [ ! -d "$servicedir" ]; then
     echo "Creating $servicedir..."
@@ -19,7 +19,7 @@ After=syslog.target network.target
 
 [Service]
 Type=oneshot
-ExecStart=$scriptdir/${service}_collect2db.sh
+ExecStart=/bin/sh -c '. /etc/profile.d/nix.sh; PATH=$HOME/.local/nix-override:\$PATH $scriptdir/${service}_collect2db.sh'
 
 PrivateTmp=true
 ProtectSystem=strict
