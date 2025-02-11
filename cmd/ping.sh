@@ -1,5 +1,6 @@
 #! /usr/bin/env nix-shell
-#! nix-shell --pure --keep CREDENTIALS_DIRECTORY -i dash -I channel:nixos-24.11-small -p nix dash coreutils inetutils gnugrep
+#! nix-shell --pure --keep CREDENTIALS_DIRECTORY
+#! nix-shell -i dash -I channel:nixos-24.11-small -p nix dash coreutils inetutils gnugrep
 set -eu
 
 count="${1:-1}"
